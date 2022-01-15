@@ -1,0 +1,17 @@
+# Stats receiver service file
+#
+# $ sudo cp $this /etc/systemd/system/
+# $ sudo systemctl daemon-reload
+# $ sudo systemctl start metrics-push-receiver
+#
+
+[Unit]
+Description=Listens for sensor pushes and translates them to prometheus-compatible pulls
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/metrics-push-receiver.py
+#User=user
+
+[Install]
+WantedBy=multi-user.target
