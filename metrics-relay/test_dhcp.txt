@@ -1,0 +1,33 @@
+  TIME: 2022-02-03 22:59:47.339
+    IP: 0.0.0.0 (98:60:ca:58:86:a2) > 255.255.255.255 (ff:ff:ff:ff:ff:ff)
+    OP: 1 (BOOTPREQUEST)
+ HTYPE: 1 (Ethernet)
+  HLEN: 6
+  HOPS: 0
+   XID: d4c64c31
+  SECS: 0
+ FLAGS: 0
+CIADDR: 0.0.0.0
+YIADDR: 0.0.0.0
+SIADDR: 0.0.0.0
+GIADDR: 0.0.0.0
+CHADDR: 98:60:ca:58:86:a2:00:00:00:00:00:00:00:00:00:00
+ SNAME: .
+ FNAME: .
+OPTION:  53 (  1) DHCP message type         3 (DHCPREQUEST)
+OPTION:  55 (  9) Parameter Request List      1 (Subnet mask)
+					    121 (Classless Static Route)
+					      3 (Routers)
+					      6 (DNS server)
+					     15 (Domainname)
+					    108 (Swap Path)
+					    114 (URL)
+					    119 (Domain Search)
+					    252 (MSFT - WinSock Proxy Auto Detect)
+
+OPTION:  57 (  2) Maximum DHCP message size 1500
+OPTION:  61 (  7) Client-identifier         01:98:60:ca:58:86:a2
+OPTION:  50 (  4) Request IP address        192.168.1.22
+OPTION:  51 (  4) IP address leasetime      7776000 (12w6d)
+OPTION:  12 (  6) Host name                 Kepler
+---------------------------------------------------------------------------

@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    volumes:
+      - ./homeassistant/config:/config
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+
+  mosquitto:
+    container_name: mosquitto
+    image: "eclipse-mosquitto"
+    volumes:
+      - ./mosquitto:/mosquitto
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    ports:
+      - 1883:1883
+      - 9001:9001
+
+  nodered:
+    container_name: nodered
+    image: "nodered/node-red"
+    volumes:
+      - ./nodered/data:/data
+      - /etc/localtime:/etc/localtime:ro
+    ports: 1880:1880

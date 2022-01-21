@@ -1,0 +1,1178 @@
+[
+    {
+        "id": "feb607a08ba5f807",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "954e2eb0cffcbb79",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b86ff011551056c1",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f70eb996c94862bb",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "70064d8daf639ebd",
+        "type": "server",
+        "name": "Alpine",
+        "version": 2,
+        "addon": false,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true,
+        "heartbeat": true,
+        "heartbeatInterval": "30"
+    },
+    {
+        "id": "fa272fd22c88a778",
+        "type": "mqtt-broker",
+        "name": "Raspi",
+        "broker": "127.0.0.1",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "4be886247616e0b6",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "dd5c994cf556fb92",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "5bbc5a2a88f3eada",
+        "type": "api-call-service",
+        "z": "feb607a08ba5f807",
+        "name": "Set Scene",
+        "server": "70064d8daf639ebd",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "homeassistant",
+        "service": "turn_on",
+        "entityId": "{{payload}}",
+        "data": "",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1110,
+        "y": 840,
+        "wires": [
+            []
+        ],
+        "inputLabels": [
+            "Scene"
+        ]
+    },
+    {
+        "id": "2fd184c6abee2a96",
+        "type": "server-events",
+        "z": "feb607a08ba5f807",
+        "name": "On call_service",
+        "server": "70064d8daf639ebd",
+        "version": 1,
+        "event_type": "call_service",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "waitForRunning": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "$outputData(\"eventData\").event_type",
+                "valueType": "jsonata"
+            }
+        ],
+        "x": 120,
+        "y": 180,
+        "wires": [
+            [
+                "b8115da68362163a"
+            ]
+        ]
+    },
+    {
+        "id": "b8115da68362163a",
+        "type": "switch",
+        "z": "feb607a08ba5f807",
+        "name": "if scene.turn_on",
+        "property": "payload.event_type &  '.' & payload.event.domain & '.' & payload.event.service",
+        "propertyType": "jsonata",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "call_service.scene.turn_on",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 320,
+        "y": 180,
+        "wires": [
+            [
+                "fcb6da27d98b8830"
+            ]
+        ]
+    },
+    {
+        "id": "796b5c98e68db3a2",
+        "type": "change",
+        "z": "feb607a08ba5f807",
+        "name": "Save active_scene",
+        "rules": [
+            {
+                "t": "set",
+                "p": "scene.previous",
+                "pt": "global",
+                "to": "scene.current",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "scene.current",
+                "pt": "global",
+                "to": "msg.payload.event.service_data.entity_id[0]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "payload.from",
+                "pt": "msg",
+                "to": "scene.previous",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "payload.to",
+                "pt": "msg",
+                "to": "scene.current",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "alpine/event/scene_changed",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e94ffe4186502942",
+        "type": "sun events",
+        "z": "feb607a08ba5f807",
+        "testmode": false,
+        "verbose": "N",
+        "topic": "sun_events",
+        "name": "",
+        "x": 330,
+        "y": 100,
+        "wires": [
+            [
+                "2ba1e02b8b9d8199"
+            ]
+        ]
+    },
+    {
+        "id": "324cdfb39594fac4",
+        "type": "inject",
+        "z": "feb607a08ba5f807",
+        "name": "Boulder (lat, lon)",
+        "props": [
+            {
+                "p": "payload.latitude",
+                "v": "40.014984",
+                "vt": "num"
+            },
+            {
+                "p": "payload.longitude",
+                "v": "-105.270546",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "e94ffe4186502942",
+                "d75f4b901f425277"
+            ]
+        ]
+    },
+    {
+        "id": "6afe30964c12c435",
+        "type": "comment",
+        "z": "feb607a08ba5f807",
+        "name": "State capture",
+        "info": "",
+        "x": 130,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "d75f4b901f425277",
+        "type": "change",
+        "z": "feb607a08ba5f807",
+        "name": "Init Globals",
+        "rules": [
+            {
+                "t": "set",
+                "p": "scene",
+                "pt": "global",
+                "to": "{\"current\":\"scene.day\",\"previous\":\"\",\"auto\":\"scene.day\",\"manual\":false,\"rotation\":{\"scene.day\":\"scene.evening\",\"scene.house_lights\":\"scene.evening\",\"scene.evening\":\"scene.late\",\"scene.late\":\"scene.day\",\"scene.off\":\"scene.off\"}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fcb6da27d98b8830",
+        "type": "rbe",
+        "z": "feb607a08ba5f807",
+        "name": "changed",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload.event",
+        "topi": "topic",
+        "x": 480,
+        "y": 180,
+        "wires": [
+            [
+                "142d98ebdd8012a4"
+            ]
+        ]
+    },
+    {
+        "id": "dd0151dff9f48528",
+        "type": "mqtt in",
+        "z": "feb607a08ba5f807",
+        "name": "Front Door Top",
+        "topic": "shellies/sw1_door/input_event/0",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "fa272fd22c88a778",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 420,
+        "wires": [
+            [
+                "d418fdac84b1e569"
+            ]
+        ]
+    },
+    {
+        "id": "e2887e3f3f95f3e1",
+        "type": "mqtt in",
+        "z": "feb607a08ba5f807",
+        "name": "Front Door Bottom",
+        "topic": "shellies/sw1_door/input_event/1",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "fa272fd22c88a778",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 520,
+        "wires": [
+            [
+                "340d4238f30c5ece"
+            ]
+        ]
+    },
+    {
+        "id": "58350f5419b2bff3",
+        "type": "comment",
+        "z": "feb607a08ba5f807",
+        "name": "Inputs",
+        "info": "",
+        "x": 90,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "d418fdac84b1e569",
+        "type": "rbe",
+        "z": "feb607a08ba5f807",
+        "name": "dedup",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload.event_cnt",
+        "topi": "topic",
+        "x": 290,
+        "y": 420,
+        "wires": [
+            [
+                "94da399fb3638293",
+                "2f146a425641afbc"
+            ]
+        ]
+    },
+    {
+        "id": "340d4238f30c5ece",
+        "type": "rbe",
+        "z": "feb607a08ba5f807",
+        "name": "dedup",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "payload.event_cnt",
+        "topi": "topic",
+        "x": 290,
+        "y": 520,
+        "wires": [
+            [
+                "f3248eea78f42b64",
+                "2f146a425641afbc"
+            ]
+        ]
+    },
+    {
+        "id": "94da399fb3638293",
+        "type": "switch",
+        "z": "feb607a08ba5f807",
+        "name": "short / long",
+        "property": "payload.event",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "S",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "L",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 430,
+        "y": 420,
+        "wires": [
+            [
+                "e675e16177c40aa8"
+            ],
+            [
+                "aae7f5b1e00d192b"
+            ]
+        ]
+    },
+    {
+        "id": "f3248eea78f42b64",
+        "type": "switch",
+        "z": "feb607a08ba5f807",
+        "name": "short / long",
+        "property": "payload.event",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "S",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "L",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 430,
+        "y": 520,
+        "wires": [
+            [
+                "d87230b942b61a9e"
+            ],
+            [
+                "d01549506b44b6a9"
+            ]
+        ]
+    },
+    {
+        "id": "2ba1e02b8b9d8199",
+        "type": "function",
+        "z": "feb607a08ba5f807",
+        "name": "Set Auto Scene",
+        "func": "\nlet scene = global.get('scene');\n\nswitch (msg.sunevent.name) {\n    case \"sunrise\":\n        scene.auto = 'scene.day';\n        break;\n    case \"sunset\":\n        scene.auto = 'scene.evening';\n        break;\n    case \"nadir\":\n        scene.auto = 'scene.late';\n        break;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7fefa245ff8db99b",
+        "type": "mqtt out",
+        "z": "feb607a08ba5f807",
+        "name": "",
+        "topic": "",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "fa272fd22c88a778",
+        "x": 1230,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "925070758ba55d42",
+        "type": "change",
+        "z": "feb607a08ba5f807",
+        "name": "next scene",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "alpine/cmd/next_scene",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 890,
+        "y": 360,
+        "wires": [
+            [
+                "7fefa245ff8db99b"
+            ]
+        ]
+    },
+    {
+        "id": "504841698e620ba4",
+        "type": "comment",
+        "z": "feb607a08ba5f807",
+        "name": "Actions",
+        "info": "",
+        "x": 90,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "aae7f5b1e00d192b",
+        "type": "change",
+        "z": "feb607a08ba5f807",
+        "name": "house lights",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "alpine/cmd/house_lights",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 890,
+        "y": 420,
+        "wires": [
+            [
+                "7fefa245ff8db99b"
+            ]
+        ]
+    },
+    {
+        "id": "c686cce188864689",
+        "type": "change",
+        "z": "feb607a08ba5f807",
+        "name": "off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "alpine/cmd/off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 540,
+        "wires": [
+            [
+                "7fefa245ff8db99b"
+            ]
+        ]
+    },
+    {
+        "id": "d50ec89114b6556c",
+        "type": "mqtt in",
+        "z": "feb607a08ba5f807",
+        "name": "next_scene",
+        "topic": "alpine/cmd/next_scene",
+        "qos": "1",
+        "datatype": "utf8",
+        "broker": "fa272fd22c88a778",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 740,
+        "wires": [
+            [
+                "9591cc297eef8883"
+            ]
+        ]
+    },
+    {
+        "id": "b1e8e755ea165b88",
+        "type": "mqtt in",
+        "z": "feb607a08ba5f807",
+        "name": "off",
+        "topic": "alpine/cmd/off",
+        "qos": "1",
+        "datatype": "utf8",
+        "broker": "fa272fd22c88a778",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 820,
+        "wires": [
+            [
+                "df2dd37b4c88e2f7"
+            ]
+        ]
+    },
+    {
+        "id": "80601a822b8760ce",
+        "type": "mqtt in",
+        "z": "feb607a08ba5f807",
+        "name": "house_lights",
+        "topic": "alpine/cmd/house_lights",
+        "qos": "1",
+        "datatype": "utf8",
+        "broker": "fa272fd22c88a778",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 940,
+        "wires": [
+            [
+                "a2ba91425bb35205"
+            ]
+        ]
+    },
+    {
+        "id": "2c393a668115a1f7",
+        "type": "mqtt out",
+        "z": "feb607a08ba5f807",
+        "name": "",
+        "topic": "",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "fa272fd22c88a778",
+        "x": 850,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "142d98ebdd8012a4",
+        "type": "function",
+        "z": "feb607a08ba5f807",
+        "name": "save scene",
+        "func": "\nlet new_scene = msg.payload.event.service_data.entity_id[0];\n\nlet scene = global.get(\"scene\")\nscene.previous = scene.current;\nscene.current = new_scene;\n\nmsg.payload = {}\nmsg.payload.previous = scene.previous\nmsg.payload.current = new_scene;\n\n// MQTT Topic to publish\nmsg.topic = \"alpine/event/scene_changed\"\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 260,
+        "wires": [
+            [
+                "2c393a668115a1f7"
+            ]
+        ]
+    },
+    {
+        "id": "df2dd37b4c88e2f7",
+        "type": "change",
+        "z": "feb607a08ba5f807",
+        "name": "scene.off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "scene.off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 820,
+        "wires": [
+            [
+                "f94ef2d5d3742767"
+            ]
+        ]
+    },
+    {
+        "id": "c8b578417cdd7967",
+        "type": "function",
+        "z": "feb607a08ba5f807",
+        "name": "Desired Scene",
+        "func": "let scene = global.get(\"scene\")\n\nmsg.payload = scene.manual ? scene.manual : scene.auto;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 840,
+        "wires": [
+            [
+                "5bbc5a2a88f3eada"
+            ]
+        ]
+    },
+    {
+        "id": "e675e16177c40aa8",
+        "type": "switch",
+        "z": "feb607a08ba5f807",
+        "name": "off / on",
+        "property": "scene.current",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "scene.off",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 620,
+        "y": 380,
+        "wires": [
+            [
+                "0aeed0b3c6c56e12"
+            ],
+            [
+                "925070758ba55d42"
+            ]
+        ]
+    },
+    {
+        "id": "d87230b942b61a9e",
+        "type": "switch",
+        "z": "feb607a08ba5f807",
+        "name": "off / on",
+        "property": "scene.current",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "scene.off",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 620,
+        "y": 500,
+        "wires": [
+            [
+                "0aeed0b3c6c56e12"
+            ],
+            [
+                "c686cce188864689"
+            ]
+        ]
+    },
+    {
+        "id": "0aeed0b3c6c56e12",
+        "type": "change",
+        "z": "feb607a08ba5f807",
+        "name": "on",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "alpine/cmd/on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 870,
+        "y": 480,
+        "wires": [
+            [
+                "7fefa245ff8db99b"
+            ]
+        ]
+    },
+    {
+        "id": "d01549506b44b6a9",
+        "type": "change",
+        "z": "feb607a08ba5f807",
+        "name": "refresh_scene",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "alpine/cmd/refresh_scene",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 600,
+        "wires": [
+            [
+                "7fefa245ff8db99b"
+            ]
+        ]
+    },
+    {
+        "id": "6efe8b1ccf0bae5b",
+        "type": "mqtt in",
+        "z": "feb607a08ba5f807",
+        "name": "on",
+        "topic": "alpine/cmd/on",
+        "qos": "1",
+        "datatype": "utf8",
+        "broker": "fa272fd22c88a778",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 880,
+        "wires": [
+            [
+                "de6338e9cacb0620"
+            ]
+        ]
+    },
+    {
+        "id": "1f81f8b51a56384e",
+        "type": "mqtt in",
+        "z": "feb607a08ba5f807",
+        "name": "refresh_scene",
+        "topic": "alpine/cmd/refresh_scene",
+        "qos": "1",
+        "datatype": "utf8",
+        "broker": "fa272fd22c88a778",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 1020,
+        "wires": [
+            [
+                "c8b578417cdd7967"
+            ]
+        ]
+    },
+    {
+        "id": "9591cc297eef8883",
+        "type": "function",
+        "z": "feb607a08ba5f807",
+        "name": "next scene",
+        "func": "\nlet scene = global.get(\"scene\");\nmsg.payload = scene.rotation[scene.current];\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 740,
+        "wires": [
+            [
+                "f94ef2d5d3742767"
+            ]
+        ]
+    },
+    {
+        "id": "f94ef2d5d3742767",
+        "type": "change",
+        "z": "feb607a08ba5f807",
+        "name": "Set Manual",
+        "rules": [
+            {
+                "t": "set",
+                "p": "scene.manual",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 740,
+        "wires": [
+            [
+                "c8b578417cdd7967"
+            ]
+        ]
+    },
+    {
+        "id": "de6338e9cacb0620",
+        "type": "change",
+        "z": "feb607a08ba5f807",
+        "name": "Set Auto",
+        "rules": [
+            {
+                "t": "set",
+                "p": "scene.manual",
+                "pt": "global",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 820,
+        "wires": [
+            [
+                "c8b578417cdd7967"
+            ]
+        ]
+    },
+    {
+        "id": "a2ba91425bb35205",
+        "type": "change",
+        "z": "feb607a08ba5f807",
+        "name": "scene.house",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "scene.house_lights",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 310,
+        "y": 940,
+        "wires": [
+            [
+                "f94ef2d5d3742767"
+            ]
+        ]
+    },
+    {
+        "id": "2f146a425641afbc",
+        "type": "debug",
+        "z": "feb607a08ba5f807",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 300,
+        "wires": []
+    }
+]
