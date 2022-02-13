@@ -1,1 +1,7 @@
 .DS_Store
+
+# Ignore the data folders for the docker services
+
+docker-services/homeassistant/*
+docker-services/mosquitto/*
+docker-services/nodered/*
